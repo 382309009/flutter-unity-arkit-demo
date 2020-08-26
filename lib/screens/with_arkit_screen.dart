@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_unity_widget/flutter_unity_widget.dart';
 
-
 class WithARkitScreen extends StatefulWidget {
   @override
   _WithARkitScreenState createState() => _WithARkitScreenState();
@@ -15,13 +14,13 @@ class CustomPopupMenu {
 }
 
 List<CustomPopupMenu> choices = <CustomPopupMenu>[
+  CustomPopupMenu(title: 'ARKit Face Blend Shapes', scene: 6),
   CustomPopupMenu(title: 'AR World Map', scene: 0),
   CustomPopupMenu(title: 'Face Mesh', scene: 1),
   CustomPopupMenu(title: 'Check Support', scene: 2),
   CustomPopupMenu(title: 'Camera Image', scene: 3),
   CustomPopupMenu(title: 'Environment Probes', scene: 4),
   CustomPopupMenu(title: 'AR Core Face Regions', scene: 5),
-  CustomPopupMenu(title: 'ARKit Face Blend Shapes', scene: 6),
   CustomPopupMenu(title: 'Face Pose', scene: 7),
   CustomPopupMenu(title: 'Human Body Tracking 2D', scene: 8),
   CustomPopupMenu(title: 'Human Body Tracking 3D', scene: 9),
@@ -36,9 +35,8 @@ List<CustomPopupMenu> choices = <CustomPopupMenu>[
 ];
 
 class _WithARkitScreenState extends State<WithARkitScreen> {
-
   static final GlobalKey<ScaffoldState> _scaffoldKey =
-  GlobalKey<ScaffoldState>();
+      GlobalKey<ScaffoldState>();
   UnityWidgetController _unityWidgetController;
   double _sliderValue = 0.0;
 
@@ -56,7 +54,6 @@ class _WithARkitScreenState extends State<WithARkitScreen> {
       'LoadGameScene',
       choice.scene.toString(),
     );
-
   }
 
   @override
@@ -89,7 +86,7 @@ class _WithARkitScreenState extends State<WithARkitScreen> {
           )
         ],
       ),
-      body:Card(
+      body: Card(
         margin: const EdgeInsets.all(8),
         clipBehavior: Clip.antiAlias,
         shape: RoundedRectangleBorder(
@@ -99,7 +96,7 @@ class _WithARkitScreenState extends State<WithARkitScreen> {
           children: <Widget>[
             UnityWidget(
               onUnityViewCreated: onUnityCreated,
-              isARScene: false,
+              isARScene: true,
               onUnityMessage: onUnityMessage,
             ),
           ],

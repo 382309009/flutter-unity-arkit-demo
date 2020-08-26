@@ -1,3 +1,9 @@
+include ':UnityARCore'
+include ':unityandroidpermissions'
+include ':UnityAdsAndroidPlugin'
+include ':UnityAds'
+include ':arcore_client'
+include ':ARPresto'
 include ':app', ':unity-classes'
 
 def flutterProjectRoot = rootProject.projectDir.parentFile.toPath()
